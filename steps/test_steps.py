@@ -57,9 +57,10 @@ def step_impl(context):
     context.driver.quit()
 
 
-@then("I should see error text Username atau password salah")
-def step_impl(context):
+@then('I should see error text "{error_message}"')
+def step_impl(context, error_message):
     context.driver.implicitly_wait(10)
-    error_element = context.driver.find_element(By.XPATH, "//div[contains(text(), 'Username atau password salah')]")  # Adjust as needed
+    print("error_message", f"//div[contains(text(), '{error_message}')]")
+    error_element = context.driver.find_element(By.XPATH, f"//div[contains(text(), '{error_message}')]")  # Adjust as needed
     assert error_element is not None, "Login failed"
     context.driver.quit()
