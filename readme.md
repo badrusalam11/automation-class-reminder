@@ -1,1 +1,3 @@
-behave -f behave_html_formatter:HTMLFormatter -o output/report.html; python generate_report.py
+This is automation of class reminder application using selenium python
+
+behave
